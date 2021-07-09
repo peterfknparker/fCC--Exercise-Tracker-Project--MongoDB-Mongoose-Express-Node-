@@ -108,7 +108,7 @@ app.post("/api/users/:_id/exercises", async function (req, res) {
 					.exec(function (err, user) {
 						if (err) return console.log(err);
 						user.description = req.body.description;
-						user.date = validatedDate;
+						user.date = validatedDate.toDateString();
 						user.duration = req.body.duration;
 						res.json(user);
 					});
@@ -139,7 +139,7 @@ app.post("/api/users/:_id/exercises", async function (req, res) {
 						.exec(function (err, user) {
 							if (err) return console.log(err);
 							user.description = req.body.description;
-							user.date = validatedDate;
+							user.date = validatedDate.toDateString();
 							user.duration = req.body.duration;
 							res.json(user);
 						});
