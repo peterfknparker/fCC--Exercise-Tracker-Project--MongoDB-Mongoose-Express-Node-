@@ -110,7 +110,7 @@ app.post("/api/users/:_id/exercises", async function (req, res) {
 						delete user["__v"];
 						user.description = req.body.description;
 						user.date = validatedDate.toDateString();
-						user.duration = req.body.duration;
+						user.duration = parseInt(req.body.duration);
 						res.json(user);
 					});
 			});
@@ -141,7 +141,7 @@ app.post("/api/users/:_id/exercises", async function (req, res) {
 							if (err) return console.log(err);
 							delete user["__v"];
 							user.date = validatedDate.toDateString();
-							user.duration = req.body.duration;
+							user.duration = parseInt(req.body.duration);
 							user.description = req.body.description;
 							res.json(user);
 						});
